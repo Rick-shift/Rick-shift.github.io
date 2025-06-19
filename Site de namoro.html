@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu ❤️ Luara - Nosso Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Eu ❤️ Luara</h1>
+        <p id="diasJuntos">Carregando...</p>
+        <p id="mesesJuntos">Carregando...</p>
+
+        <div class="fotos">
+            <div class="foto">
+                <img src="sua_foto.jpg" alt="Minha foto">
+                <span>Eu❤️</span>
+            </div>
+            <div class="foto">
+                <img src="foto_dela.jpg" alt="Foto da Luara">
+                <span>Luara❤️</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>Feito com ❤️ por Nós</p>
+        </footer>
+    </div>
+<style>
+
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #47003b, #a800a8);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    background: #ffffffdd;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    color: #e75480;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+#diasJuntos {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.fotos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.foto {
+    width: 120px;
+    text-align: center;
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.foto span {
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+@media (max-width: 500px) {
+    .fotos {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+</style>
+    <script>
+        const dataInicio = new Date('2025-01-19');
+
+        function calcularTempo() {
+            const hoje = new Date();
+            const diferencaMs = hoje - dataInicio;
+            const dias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+
+            let anos = hoje.getFullYear() - dataInicio.getFullYear();
+            let meses = hoje.getMonth() - dataInicio.getMonth();
+            if (hoje.getDate() < dataInicio.getDate()) {
+                meses -= 1;
+            }
+            const totalMeses = anos * 12 + meses;
+
+            document.getElementById('diasJuntos').innerText = `Estamos juntos há ${dias} dias ❤️`;
+            document.getElementById('mesesJuntos').innerText = `Isso dá ${totalMeses} meses de amor 🥰`;
+        }
+
+        calcularTempo();
+    </script>
+</body>
+</html>
